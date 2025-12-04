@@ -1,4 +1,6 @@
 import { Sparkles } from "lucide-react";
+import Link from "next/link";
+import { BOT_URL } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,23 +23,23 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Company */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Компания</h3>
+            <h3 className="text-white font-semibold mb-4">Навигация</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  О нас
+                <a href="#features" className="hover:text-primary transition-colors">
+                  Возможности
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Контакты
+                <a href="#pricing" className="hover:text-primary transition-colors">
+                  Цены
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Блог
+                <a href="#faq" className="hover:text-primary transition-colors">
+                  Вопросы
                 </a>
               </li>
             </ul>
@@ -48,19 +50,19 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Документы</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link href="/privacy" className="hover:text-primary transition-colors">
                   Политика конфиденциальности
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link href="/terms" className="hover:text-primary transition-colors">
                   Пользовательское соглашение
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <Link href="/offer" className="hover:text-primary transition-colors">
                   Публичная оферта
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,7 +77,9 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="#"
+              href={BOT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
               aria-label="Telegram"
             >
