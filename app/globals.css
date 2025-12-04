@@ -52,3 +52,63 @@ html {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Smooth animations - оптимизация для предотвращения фризов */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Улучшение производительности анимаций */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+}
+
+/* Оптимизация прокрутки */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* GPU ускорение для анимаций */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Предотвращение проблем с цветами текста */
+.text-primary {
+  color: rgb(var(--color-primary, 99 102 241));
+}
+
+/* Убеждаемся что темный текст виден на светлом фоне */
+.bg-white {
+  color: rgb(15, 23, 42);
+}
+
+.bg-gray-50 {
+  color: rgb(15, 23, 42);
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-gray-900 {
+    color: rgb(243, 244, 246);
+  }
+
+  .dark\:bg-gray-950 {
+    color: rgb(243, 244, 246);
+  }
+}

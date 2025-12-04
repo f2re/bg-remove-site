@@ -1,42 +1,53 @@
 export const BOT_USERNAME = "your_bot_username";
 export const BOT_URL = `https://t.me/${BOT_USERNAME}`;
 
+// Free images for new users
+export const FREE_IMAGES_COUNT = 3;
+
+// Referral program configuration
+export const REFERRAL_REWARD_START = 5;
+
+// Metrika goals
+export const METRIKA_GOAL_START = "start_bot";
+export const METRIKA_GOAL_FIRST_IMAGE = "first_image";
+export const METRIKA_GOAL_PURCHASE = "purchase";
+
 export const PRICING_PACKAGES = [
   {
     id: 1,
     name: "Пробный",
-    price: 0,
-    photos: 3,
-    pricePerPhoto: "Бесплатно",
+    price: 99,
+    photos: 5,
+    pricePerPhoto: "~20₽/шт",
     isPopular: false,
-    features: ["3 фото бесплатно", "Прозрачный или белый фон", "Без регистрации"],
+    features: ["5 фотографий", "Прозрачный или белый фон", "Быстрая обработка"],
   },
   {
     id: 2,
     name: "Стартовый",
-    price: 100,
-    photos: 5,
-    pricePerPhoto: "~20₽/шт",
+    price: 199,
+    photos: 15,
+    pricePerPhoto: "~13₽/шт",
     isPopular: false,
-    features: ["5 фотографий", "Быстрая обработка", "Два типа фона"],
+    features: ["15 фотографий", "Пакетная обработка", "Два типа фона"],
   },
   {
     id: 3,
-    name: "Базовый",
-    price: 180,
-    photos: 10,
-    pricePerPhoto: "~18₽/шт",
+    name: "Профи",
+    price: 699,
+    photos: 50,
+    pricePerPhoto: "~14₽/шт",
     isPopular: true,
-    features: ["10 фотографий", "Пакетная обработка", "Приоритетная поддержка"],
+    features: ["50 фотографий", "Максимальная выгода", "Приоритетная поддержка"],
   },
   {
     id: 4,
-    name: "Продвинутый",
-    price: 350,
-    photos: 20,
-    pricePerPhoto: "~17.5₽/шт",
+    name: "Бизнес",
+    price: 1499,
+    photos: 150,
+    pricePerPhoto: "~10₽/шт",
     isPopular: false,
-    features: ["20 фотографий", "Максимальная экономия", "VIP поддержка"],
+    features: ["150 фотографий", "Для активных селлеров", "VIP поддержка"],
   },
 ];
 
@@ -59,7 +70,7 @@ export const FEATURES = [
   {
     icon: "Wallet",
     title: "Доступные цены",
-    description: "От 18₽ за фото. 3 фото бесплатно. Без подписок и автосписаний.",
+    description: "От 10₽ за фото. 3 фото бесплатно для новых пользователей. Без подписок и автосписаний.",
   },
   {
     icon: "Smartphone",
@@ -130,7 +141,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: "Сколько стоит обработка одного фото?",
-    answer: "Первые 3 фото абсолютно бесплатно. Далее стоимость начинается от 17-20₽ за фото в зависимости от выбранного пакета. Чем больше пакет, тем выгоднее цена за одно фото.",
+    answer: "Первые 3 фото абсолютно бесплатно для новых пользователей. Далее стоимость начинается от 10₽ за фото в зависимости от выбранного пакета. Чем больше пакет, тем выгоднее цена за одно фото.",
   },
   {
     question: "Можно ли обработать несколько фото сразу?",

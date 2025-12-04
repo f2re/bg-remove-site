@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StructuredData from "@/components/StructuredData";
+import YandexMetrika from "@/components/YandexMetrika";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -46,6 +47,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <YandexMetrika />
         {children}
       </body>
     </html>
