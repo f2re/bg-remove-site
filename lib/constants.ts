@@ -30,6 +30,7 @@ export const FREE_IMAGES_COUNT = 3;
 
 // Referral program configuration
 export const REFERRAL_REWARD_START = 5;
+export const REFERRAL_REWARD_PURCHASE_PERCENT = 10;
 
 // Metrika goals
 export const METRIKA_GOAL_START = "start_bot";
