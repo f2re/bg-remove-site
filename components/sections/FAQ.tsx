@@ -43,7 +43,7 @@ export default function FAQ() {
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left bg-white transition-colors"
                 >
                   <span className="font-semibold text-lg pr-4">
                     {item.question}
