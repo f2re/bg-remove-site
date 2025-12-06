@@ -64,7 +64,7 @@ export default function FAQ() {
                       : "max-h-0 opacity-0"
                   )}
                 >
-                  <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <div className="px-6 py-5 text-gray-600 dark:text-gray-400 leading-relaxed">
                     {item.answer}
                   </div>
                 </div>
