@@ -128,7 +128,7 @@ export default function Referral() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="max-w-3xl mx-auto mb-12"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 space-y-4">
+          <div className="bg-white rounded-lg p-6 space-y-4">
             <h3 className="text-xl font-bold text-center mb-6">Преимущества программы</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
