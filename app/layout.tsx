@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://yourdomain.com",
+    url: "https://bg.app-studio.online",
     title: "BG Remove - Удаление фона через Telegram",
     description: "Первые 3 фото бесплатно! Нейросеть удаляет фон за 5 секунд",
     siteName: "BG Remove",
@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   // Читаем Metrika ID на сервере (доступен в runtime)
-  const metrikaId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID || '';
+  const metrikaId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID || '105494857';
 
   return (
     <html lang="ru" className="dark scroll-smooth">

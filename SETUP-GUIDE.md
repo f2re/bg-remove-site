@@ -62,7 +62,7 @@ NEXT_PUBLIC_BOT_USERNAME=your_actual_bot_username
 NEXT_PUBLIC_BOT_URL=https://t.me/your_actual_bot_username
 
 # Your domain (for production)
-NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+NEXT_PUBLIC_SITE_URL=https://bg.app-studio.online
 ```
 
 ### 3. Customize Content
@@ -199,7 +199,7 @@ Done! Your site will be live in minutes.
 
 1. **Google Search Console**
    - Add your site
-   - Submit sitemap: `https://yourdomain.com/sitemap.xml`
+   - Submit sitemap: `https://bg.app-studio.online/sitemap.xml`
 
 2. **Yandex Webmaster**
    - Add your site

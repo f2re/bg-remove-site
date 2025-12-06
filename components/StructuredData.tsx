@@ -6,8 +6,8 @@ export default function StructuredData() {
     "@type": "Organization",
     name: "BG Remove",
     description: "Профессиональное удаление фона с фотографий через Telegram бот",
-    url: "https://yourdomain.com",
-    logo: "https://yourdomain.com/logo.png",
+    url: "https://bg.app-studio.online",
+    logo: "https://bg.app-studio.online/logo.png",
     sameAs: [
       "https://t.me/BackgroundRemoving_bot",
     ],

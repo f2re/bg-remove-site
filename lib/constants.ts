@@ -104,7 +104,7 @@ export const FEATURES = [
   {
     icon: "Shield",
     title: "Безопасность",
-    description: "Фото не сохраняются. Оплата через ЮKassa. GDPR compliant.",
+    description: "Фото не сохраняются. Оплата через ЮKassa.",
   },
 ];
 
