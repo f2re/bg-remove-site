@@ -9,8 +9,7 @@ export default function StructuredData() {
     url: "https://yourdomain.com",
     logo: "https://yourdomain.com/logo.png",
     sameAs: [
-      "https://t.me/your_bot_username",
-      "https://vk.com/your_page",
+      "https://t.me/BackgroundRemoving_bot",
     ],
     contactPoint: {
       "@type": "ContactPoint",

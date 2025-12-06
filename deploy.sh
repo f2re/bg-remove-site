@@ -112,7 +112,7 @@ fi
 print_success "Docker установлен"
 
 # Проверка Docker Compose
-if ! command -v docker-compose &> /dev/null && ! docker compose version &> /dev/null; then
+if ! command -v docker compose &> /dev/null && ! docker compose version &> /dev/null; then
     print_error "Docker Compose не установлен"
     exit 1
 fi
@@ -271,16 +271,16 @@ cd "$WEBSITE_DIR"
 # Останавливаем старый контейнер если существует
 if docker ps -a | grep -q bg-remove-website; then
     print_info "Остановка старого контейнера..."
-    docker-compose down
+    docker compose down
     print_success "Старый контейнер остановлен"
 fi
 
 # Собираем и запускаем
 print_info "Сборка Docker образа (это может занять несколько минут)..."
-docker-compose build --no-cache
+docker compose build --no-cache
 
 print_info "Запуск контейнера..."
-docker-compose up -d
+docker compose up -d
 
 # Ждем запуска
 print_info "Ожидание запуска сервиса..."
@@ -290,7 +290,7 @@ sleep 10
 if docker ps | grep -q bg-remove-website; then
     print_success "Контейнер успешно запущен"
 else
-    print_error "Контейнер не запустился. Проверьте логи: docker-compose logs"
+    print_error "Контейнер не запустился. Проверьте логи: docker compose logs"
     exit 1
 fi
 
@@ -372,10 +372,10 @@ echo "   - Порт: $WEBSITE_PORT"
 echo "   - Bot Username: @$BOT_USERNAME"
 echo ""
 print_info "🔧 Полезные команды:"
-echo "   - Логи: cd $WEBSITE_DIR && docker-compose logs -f"
-echo "   - Перезапуск: cd $WEBSITE_DIR && docker-compose restart"
-echo "   - Остановка: cd $WEBSITE_DIR && docker-compose down"
-echo "   - Обновление: cd $WEBSITE_DIR && git pull && docker-compose up -d --build"
+echo "   - Логи: cd $WEBSITE_DIR && docker compose logs -f"
+echo "   - Перезапуск: cd $WEBSITE_DIR && docker compose restart"
+echo "   - Остановка: cd $WEBSITE_DIR && docker compose down"
+echo "   - Обновление: cd $WEBSITE_DIR && git pull && docker compose up -d --build"
 echo ""
 print_info "📊 Проверка статуса:"
 echo "   - Docker: docker ps | grep bg-remove-website"

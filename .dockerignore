@@ -34,7 +34,7 @@ coverage
 # Docker
 Dockerfile
 .dockerignore
-docker-compose*.yml
+docker compose*.yml
 
 # Documentation
 README.md

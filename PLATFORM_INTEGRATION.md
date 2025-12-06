@@ -21,11 +21,11 @@ nginx: configuration file /etc/nginx/nginx.conf test failed
 
 **Решение**: ✅ **ИСПРАВЛЕНО** - создан `.env.example`
 
-### Проблема 3: docker-compose.yml несовместим ⚠️
+### Проблема 3: docker compose.yml несовместим ⚠️
 
-**Причина**: Платформа ожидает определенную структуру docker-compose.yml.
+**Причина**: Платформа ожидает определенную структуру docker compose.yml.
 
-**Решение**: ✅ **ИСПРАВЛЕНО** - обновлен `docker-compose.yml`
+**Решение**: ✅ **ИСПРАВЛЕНО** - обновлен `docker compose.yml`
 
 ---
 
@@ -34,7 +34,7 @@ nginx: configuration file /etc/nginx/nginx.conf test failed
 Следующие файлы уже исправлены в репозитории:
 
 1. ✅ Создан `.env.example` - платформа теперь найдет его
-2. ✅ Обновлен `docker-compose.yml` - совместим с платформой
+2. ✅ Обновлен `docker compose.yml` - совместим с платформой
 3. ✅ Настроен `next.config.mjs` - standalone режим для Docker
 
 ---
@@ -131,7 +131,7 @@ git pull origin main  # Убедитесь что последняя верси�
 Проверьте наличие файлов:
 ```bash
 ls -la .env.example        # Должен существовать
-cat docker-compose.yml     # Должен содержать 'bot:' вместо 'website:'
+cat docker compose.yml     # Должен содержать 'bot:' вместо 'website:'
 ```
 
 ### Шаг 3: Запустите add-bot.sh БЕЗ получения SSL
@@ -215,7 +215,7 @@ sudo ./add-bot.sh
 - ✅ Создать БД
 - ✅ Клонировать репозиторий
 - ✅ Найти `.env.example`
-- ✅ Создать `docker-compose.yml`
+- ✅ Создать `docker compose.yml`
 - ✅ Собрать Docker образ
 
 ### Шаг 6: Настройте .env файл
@@ -238,13 +238,13 @@ NEXT_PUBLIC_YANDEX_METRIKA_ID=your_metrika_id
 
 ```bash
 cd /opt/telegram-bots-platform/bots/bg-site
-sudo docker-compose up -d --build
+sudo docker compose up -d --build
 ```
 
 Проверьте логи:
 
 ```bash
-docker-compose logs -f
+docker compose logs -f
 ```
 
 Должны увидеть:
@@ -395,8 +395,8 @@ fi
 
 ```bash
 cd /opt/telegram-bots-platform/bots/bg-site
-docker-compose ps
-docker-compose logs --tail=50
+docker compose ps
+docker compose logs --tail=50
 ```
 
 ### Проверка Nginx
@@ -427,8 +427,8 @@ docker network inspect bot-network
 ## 📋 Чеклист после исправления
 
 - [ ] `.env.example` существует в репозитории
-- [ ] `docker-compose.yml` использует `bot:` вместо `website:`
-- [ ] `docker-compose.yml` использует `bot-network` (external)
+- [ ] `docker compose.yml` использует `bot:` вместо `website:`
+- [ ] `docker compose.yml` использует `bot-network` (external)
 - [ ] Nginx конфигурация создана (HTTP или HTTPS)
 - [ ] Docker контейнер запущен
 - [ ] Порт доступен (`netstat -tulpn | grep 3841`)
@@ -445,7 +445,7 @@ docker network inspect bot-network
 
 ```bash
 cd /opt/telegram-bots-platform/bots/bg-site
-docker-compose logs
+docker compose logs
 ```
 
 Возможные причины:
@@ -455,9 +455,9 @@ docker-compose logs
 
 **Решение**:
 ```bash
-docker-compose down
-docker-compose build --no-cache
-docker-compose up -d
+docker compose down
+docker compose build --no-cache
+docker compose up -d
 ```
 
 ### 502 Bad Gateway
@@ -465,7 +465,7 @@ docker-compose up -d
 Проверьте что:
 1. Контейнер запущен: `docker ps | grep bg-site`
 2. Порт правильный в Nginx: `sudo nano /etc/nginx/sites-available/bg-site.conf`
-3. Next.js запустился: `docker-compose logs | grep "Ready"`
+3. Next.js запустился: `docker compose logs | grep "Ready"`
 
 ### Permission denied в логах PostgreSQL
 

@@ -149,14 +149,14 @@ WEBSITE_PORT=3000
 
 ```bash
 # Собрать образ
-docker-compose build --no-cache
+docker compose build --no-cache
 
 # Запустить контейнер
-docker-compose up -d
+docker compose up -d
 
 # Проверить статус
 docker ps | grep bg-remove
-docker-compose logs -f
+docker compose logs -f
 ```
 
 ### Шаг 6: Настройка Nginx
@@ -208,7 +208,7 @@ sudo ufw status
 docker ps | grep bg-remove-website
 
 # Проверить логи
-docker-compose logs -f
+docker compose logs -f
 
 # Проверить доступность сайта
 curl -I http://localhost:3000
@@ -242,8 +242,8 @@ WEBSITE_PORT=3000
 
 ```bash
 cd /opt/telegram-bots-platform/websites/bg-remove
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 ```
 
 ### Настройка Yandex Metrika
@@ -274,25 +274,25 @@ docker-compose up -d --build
 cd /opt/telegram-bots-platform/websites/bg-remove
 
 # Просмотр логов
-docker-compose logs -f
+docker compose logs -f
 
 # Просмотр логов за последний час
-docker-compose logs --since 1h
+docker compose logs --since 1h
 
 # Перезапуск
-docker-compose restart
+docker compose restart
 
 # Остановка
-docker-compose down
+docker compose down
 
 # Запуск
-docker-compose up -d
+docker compose up -d
 
 # Пересборка и запуск
-docker-compose up -d --build
+docker compose up -d --build
 
 # Проверка статуса
-docker-compose ps
+docker compose ps
 ```
 
 ### Логи Nginx
@@ -316,7 +316,7 @@ sudo systemctl restart docker
 
 # Перезапуск контейнера
 cd /opt/telegram-bots-platform/websites/bg-remove
-docker-compose restart
+docker compose restart
 ```
 
 ---
@@ -371,11 +371,11 @@ cp .env.production .env.production.backup
 git pull origin main
 
 # Пересобрать и перезапустить
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 
 # Проверить логи
-docker-compose logs -f
+docker compose logs -f
 ```
 
 ### Обновление зависимостей
@@ -387,8 +387,8 @@ cd /opt/telegram-bots-platform/websites/bg-remove
 nano package.json
 
 # Пересобрать образ
-docker-compose build --no-cache
-docker-compose up -d
+docker compose build --no-cache
+docker compose up -d
 ```
 
 ### Откат к предыдущей версии
@@ -401,8 +401,8 @@ git log --oneline
 git reset --hard COMMIT_HASH
 
 # Пересобрать
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 ```
 
 ---
@@ -466,7 +466,7 @@ sudo systemctl restart docker nginx
 ```bash
 # 1. Проверить контейнер
 docker ps | grep bg-remove
-docker-compose logs
+docker compose logs
 
 # 2. Проверить Nginx
 sudo nginx -t
@@ -498,15 +498,15 @@ sudo nginx -t
 
 ```bash
 # Посмотреть логи
-docker-compose logs
+docker compose logs
 
 # Проверить .env файл
 cat .env.production
 
 # Пересобрать образ
-docker-compose down
-docker-compose build --no-cache
-docker-compose up -d
+docker compose down
+docker compose build --no-cache
+docker compose up -d
 ```
 
 ### Высокое использование памяти
@@ -515,15 +515,15 @@ docker-compose up -d
 # Проверить использование
 docker stats bg-remove-website
 
-# Ограничить память в docker-compose.yml
+# Ограничить память в docker compose.yml
 services:
   website:
     mem_limit: 512m
     mem_reservation: 256m
 
 # Перезапустить
-docker-compose down
-docker-compose up -d
+docker compose down
+docker compose up -d
 ```
 
 ### 502 Bad Gateway
@@ -533,7 +533,7 @@ docker-compose up -d
 docker ps | grep bg-remove
 
 # 2. Проверить логи контейнера
-docker-compose logs -f
+docker compose logs -f
 
 # 3. Проверить порт в Nginx конфигурации
 sudo nano /etc/nginx/sites-available/bg-remove-website.conf
@@ -547,7 +547,7 @@ sudo systemctl restart nginx
 
 ```bash
 # 1. Проверить логи Next.js
-docker-compose logs -f
+docker compose logs -f
 
 # 2. Проверить ресурсы сервера
 htop
