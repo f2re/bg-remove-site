@@ -1,4 +1,4 @@
-export const BOT_USERNAME = "your_bot_username";
+export const BOT_USERNAME = "BackgroundRemoving_bot";
 export const BOT_URL = `https://t.me/${BOT_USERNAME}`;
 
 // Free images for new users
