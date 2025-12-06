@@ -12,8 +12,8 @@ WORKDIR /app
 # Копируем файлы зависимостей
 COPY package.json package-lock.json* ./
 
-# Устанавливаем зависимости
-RUN npm ci --only=production
+# Устанавливаем все зависимости (включая dev для сборки)
+RUN npm ci
 
 # Этап 2: Сборка приложения
 FROM node:20-alpine AS builder
