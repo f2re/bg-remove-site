@@ -61,6 +61,8 @@ server {
     client_max_body_size 50M;
 
     # Прокси на Next.js приложение
+    # ВАЖНО: Порт должен совпадать с PORT в .env (по умолчанию 3000)
+    # Если используете другой порт (например, 3841), измените здесь на http://localhost:3841
     location / {
         proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
@@ -92,6 +94,7 @@ server {
     }
 
     # Статические файлы Next.js (если нужно)
+    # Порт должен совпадать с основным proxy_pass выше
     location /_next/static/ {
         proxy_pass http://localhost:3000;
         proxy_cache_valid 200 60m;
