@@ -80,7 +80,7 @@ NEXT_PUBLIC_YANDEX_METRIKA_ID=your_id
 
 ```bash
 cd /opt/telegram-bots-platform/bots/bg-site/app
-sudo docker-compose up -d --build
+sudo docker compose up -d --build
 ```
 
 ### Шаг 5: Проверка
@@ -90,7 +90,7 @@ sudo docker-compose up -d --build
 docker ps | grep bg-site
 
 # Проверить логи
-docker-compose logs -f
+docker compose logs -f
 
 # Проверить сайт
 curl -I http://localhost:3841
@@ -121,16 +121,16 @@ sudo certbot --nginx -d bg.app-studio.online \
 cd /opt/telegram-bots-platform/bots/bg-site/app
 
 # Логи
-docker-compose logs -f
+docker compose logs -f
 
 # Перезапуск
-docker-compose restart
+docker compose restart
 
 # Остановка
-docker-compose down
+docker compose down
 
 # Обновление
-git pull && docker-compose up -d --build
+git pull && docker compose up -d --build
 ```
 
 ---

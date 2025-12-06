@@ -36,7 +36,7 @@ sudo ./deploy.sh
 
 - `deploy.sh` - автоматический скрипт развертывания
 - `Dockerfile` - Docker образ для Next.js
-- `docker-compose.yml` - конфигурация Docker Compose
+- `docker compose.yml` - конфигурация Docker Compose
 - `.env.production.example` - пример переменных окружения
 - `nginx.conf.example` - пример конфигурации Nginx
 - `DEPLOYMENT.md` - полное руководство
@@ -50,13 +50,13 @@ sudo ./deploy.sh
 cd /opt/telegram-bots-platform/websites/bg-remove
 
 # Логи
-docker-compose logs -f
+docker compose logs -f
 
 # Перезапуск
-docker-compose restart
+docker compose restart
 
 # Обновление
-git pull && docker-compose up -d --build
+git pull && docker compose up -d --build
 ```
 
 ---
