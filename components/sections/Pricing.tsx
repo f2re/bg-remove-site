@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
-import { PRICING_PACKAGES, BOT_URL } from "@/lib/constants";
+import { PRICING_PACKAGES, getBotUrl } from "@/lib/constants";
 
 export default function Pricing() {
   return (
@@ -87,7 +87,7 @@ export default function Pricing() {
                     className="w-full"
                     variant={pkg.isPopular ? "default" : "outline"}
                     onClick={() =>
-                      window.open(`${BOT_URL}?start=pricing_${pkg.id}`, "_blank")
+                      window.open(getBotUrl(`pricing_${pkg.name}`, `pricing_${pkg.id}`), "_blank")
                     }
                   >
                     Выбрать пакет

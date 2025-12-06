@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { BOT_URL, BOT_USERNAME } from "@/lib/constants";
+import { getBotUrl, BOT_USERNAME } from "@/lib/constants";
 import { Sparkles } from "lucide-react";
 
 export default function CTA() {
@@ -78,7 +78,7 @@ export default function CTA() {
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-50 text-lg px-12 py-6 shadow-2xl animate-pulse-slow"
-              onClick={() => window.open(`${BOT_URL}?start=cta`, "_blank")}
+              onClick={() => window.open(getBotUrl("cta", "cta"), "_blank")}
             >
               <svg
                 className="w-6 h-6 mr-2"
@@ -101,7 +101,7 @@ export default function CTA() {
           >
             <p className="text-sm mb-2">или перейдите по ссылке:</p>
             <a
-              href={BOT_URL}
+              href={getBotUrl("cta_link")}
               target="_blank"
               rel="noopener noreferrer"
               className="text-lg font-mono hover:text-white transition-colors underline"

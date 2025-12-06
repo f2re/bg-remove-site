@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { BOT_URL } from "@/lib/constants";
+import { getBotUrl } from "@/lib/constants";
 import { Sparkles, Check } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -70,7 +70,7 @@ export default function Hero() {
             <Button
               size="lg"
               className="bg-white text-primary hover:bg-gray-50 text-lg px-10 py-6 shadow-2xl"
-              onClick={() => window.open(BOT_URL, "_blank")}
+              onClick={() => window.open(getBotUrl("hero"), "_blank")}
             >
               <svg
                 className="w-6 h-6 mr-2"
