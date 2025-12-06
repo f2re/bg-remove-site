@@ -1,6 +1,6 @@
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
-import { BOT_URL } from "@/lib/constants";
+import { getBotUrl } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -77,7 +77,7 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href={BOT_URL}
+              href={getBotUrl("footer")}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"

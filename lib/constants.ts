@@ -1,6 +1,30 @@
 export const BOT_USERNAME = "your_bot_username";
 export const BOT_URL = `https://t.me/${BOT_USERNAME}`;
 
+/**
+ * Generates bot URL with UTM parameters for Yandex Metrika analytics
+ * @param source - Traffic source (e.g., "hero", "cta", "pricing", "footer")
+ * @param startParam - Optional Telegram start parameter
+ * @returns Full bot URL with UTM parameters
+ */
+export function getBotUrl(source: string, startParam?: string): string {
+  const utmParams = new URLSearchParams({
+    utm_source: "website",
+    utm_medium: "button",
+    utm_campaign: "bg_remove",
+    utm_content: source,
+  });
+
+  // Add Telegram start parameter if provided
+  let url = BOT_URL;
+  if (startParam) {
+    url += `?start=${startParam}`;
+    return `${url}&${utmParams.toString()}`;
+  }
+
+  return `${url}?${utmParams.toString()}`;
+}
+
 // Free images for new users
 export const FREE_IMAGES_COUNT = 3;
 
