@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   keywords:
     "удаление фона, убрать фон с фото, прозрачный фон, telegram бот, обработка фото, нейросеть, белый фон, маркетплейсы, ozon, wildberries",
   authors: [{ name: "BG Remove" }],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", sizes: "any" },
+    ],
+    apple: "/favicon.svg",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "ru_RU",
@@ -34,6 +42,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  themeColor: "#6366f1",
 };
 
 export default function RootLayout({
@@ -41,10 +50,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Читаем Metrika ID на сервере (доступен в runtime)
+  const metrikaId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID || '';
+
   return (
     <html lang="ru" className="dark scroll-smooth">
       <head>
         <StructuredData />
+        {/* Передаем Metrika ID в window для использования на клиенте */}
+        {metrikaId && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.__METRIKA_ID__ = "${metrikaId}";`,
+            }}
+          />
+        )}
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <YandexMetrika />
