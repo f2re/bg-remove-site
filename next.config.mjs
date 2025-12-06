@@ -17,7 +17,6 @@ const nextConfig = {
 
   // Оптимизация для production
   compress: true,
-  swcMinify: true,
 
   // Отключение телеметрии
   productionBrowserSourceMaps: false,
