@@ -3,7 +3,13 @@
 import Script from "next/script";
 
 export default function YandexMetrika() {
-  const METRIKA_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID || "YOUR_METRIKA_ID";
+  const METRIKA_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
+
+  // Не рендерим Метрику, если ID не указан
+  if (!METRIKA_ID) {
+    console.warn("⚠️  NEXT_PUBLIC_YANDEX_METRIKA_ID не указан в .env - Yandex Metrika отключена");
+    return null;
+  }
 
   return (
     <>
@@ -38,9 +44,16 @@ export default function YandexMetrika() {
 
 // Функция для отправки целей
 export function reachGoal(goal: string) {
+  const METRIKA_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
+
+  if (!METRIKA_ID) {
+    console.warn(`⚠️  Metrika goal "${goal}" не отправлена - NEXT_PUBLIC_YANDEX_METRIKA_ID не указан`);
+    return;
+  }
+
   if (typeof window !== "undefined" && window.ym) {
-    const METRIKA_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID || "YOUR_METRIKA_ID";
     window.ym(METRIKA_ID, "reachGoal", goal);
+    console.log(`✅ Metrika goal отправлена: ${goal}`);
   }
 }
 
